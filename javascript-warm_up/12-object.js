@@ -1,8 +1,11 @@
 #!/usr/bin/node
-let myObject = {
-    type: 'object',
-    value: 12
-  };
-  console.log(myObject);
+#!/usr/bin/node
+const myObject = {
+  type: 'object',
+  value: 12
+};
+console.log(myObject);
 
-  value= 89;
+value = 89
+console.log(myObject);
+
