@@ -1,11 +1,10 @@
 #!/usr/bin/node
-#!/usr/bin/node
-let myObject = {
+const myObject = {
   type: 'object',
   value: 12
 };
 console.log(myObject);
 
-let value = 89;
+myObject.value=89;
 console.log(myObject);
 
