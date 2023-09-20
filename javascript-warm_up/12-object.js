@@ -6,6 +6,6 @@ const myObject = {
 };
 console.log(myObject);
 
-value = 89
+let value = 89;
 console.log(myObject);
 
