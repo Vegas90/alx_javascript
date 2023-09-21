@@ -2,10 +2,7 @@
 function callMeMoby(x, theFunction)
 {
     for (let i=0; i<x; i++)
-    {
-        
-    return x * theFunction;
-}
+    { theFunction(); }
 };
 
 module.exports = {callMeMoby};
