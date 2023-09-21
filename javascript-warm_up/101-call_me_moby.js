@@ -1,7 +1,7 @@
 #!/usr/bin/node
-function (x, theFunction)
+function callMeMoby(x, theFunction)
 {
     return x * theFunction 
 };
 
-//module.exports = {function};
+module.exports = {callMeMoby};
