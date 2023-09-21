@@ -2,8 +2,7 @@
 //declaring function in a object
 const myObject = {
     type: 'object',
-    value: 12
-  
+    value: 12,
 incr: function()
   {
 this.value = this.value +1;
