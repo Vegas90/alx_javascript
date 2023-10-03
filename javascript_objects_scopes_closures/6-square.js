@@ -49,4 +49,6 @@ class Square extends require('./5-square') {
   }
 }
 
-module.exports = Rectangle;  
+module.exports = Rectangle;
+module.exports = Square;
+module.exports = Square; 
