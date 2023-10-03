@@ -4,5 +4,4 @@ class Rectangle {
       this.h = h;
     }
   }
-  
-  module.exports = {Rectangle};
+module.exports = {Rectangle};
