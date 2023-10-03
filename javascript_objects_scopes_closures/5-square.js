@@ -38,3 +38,5 @@ constructor(){
 }
 
 }
+
+module.exports = Rectangle;  
