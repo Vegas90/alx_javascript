@@ -36,6 +36,10 @@ constructor(size){
     super(size,size);
 }
 
+charPrint(C) {
+    for (let i = 0; i < this.size; i++) {
+      console.log('C'.repeat(this.size));
+    }
 }
 
 module.exports = Rectangle;  
