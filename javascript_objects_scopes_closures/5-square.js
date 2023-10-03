@@ -32,8 +32,7 @@ double(){
 
 class Square extends Rectangle 
 {
-constructor(){
-    size;
+constructor(size){
     super(w,h);
 }
 
