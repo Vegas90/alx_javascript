@@ -38,17 +38,18 @@ constructor(size){
 }
 
 class Square extends require('./5-square') {
-  
+  constructor(size){
+    super(size,size);
+
   charPrint(c) {
       c = 'X'; // Default to 'X' if c is undefined
-   
-
-    for (let i = 0; i < this.height; i++) {
+for (let i = 0; i < this.height; i++) {
       console.log(c.repeat(this.height));
     }
   }
 }
 
+}
 module.exports = Rectangle;
 module.exports = Square;
 module.exports = Square; 
