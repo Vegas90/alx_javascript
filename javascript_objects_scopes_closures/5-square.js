@@ -29,5 +29,12 @@ double(){
 
 }
   }
-  
-module.exports = Rectangle;  
+
+class Square extends Rectangle 
+{
+constructor(){
+    size;
+    super(w,h);
+}
+
+}
