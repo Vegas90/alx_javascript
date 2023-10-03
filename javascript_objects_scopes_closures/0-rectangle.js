@@ -1,6 +1,2 @@
 class Rectangle {
-constructor()
-{
-
-}
 };
