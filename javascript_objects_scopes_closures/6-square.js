@@ -38,6 +38,10 @@ constructor(size){
 }
 
 class Square extends require('./5-square') {
+  constructor(size){
+    super(size);
+  }
+
   charPrint(c) {
       c = 'X'; // Default to 'X' if c is undefined
    
