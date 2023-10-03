@@ -2,10 +2,8 @@ class Rectangle {
     constructor() {
       // Constructor can be defined here if needed
     }
- // Override the toString method
- toString() {
-    return 'Rectangle {}';
-  }
 }
-  
-  
+
+const r1 = new Rectangle();
+console.log(r1);
+console.log(r1.constructor);
