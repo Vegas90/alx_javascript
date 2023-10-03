@@ -1,3 +1,6 @@
 class Rectangle {
-constructor (){}
-}
+    constructor() {
+      // Constructor can be defined here if needed
+    }
+  }
+  
