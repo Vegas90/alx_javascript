@@ -2,7 +2,7 @@
 const req = require ('request');
 const id = process.argv[2];
 
-const url = 'https://swapi-api.alx-tools.com/api/films/1';
+const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
 const parts = [];
 
 req.get(url, {decoding: 'utf-8'})
