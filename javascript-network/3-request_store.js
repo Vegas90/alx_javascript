@@ -8,7 +8,7 @@ const file = process.argv[3];
 req.get(url, {encoding: 'utf-8'}, (error,response, body) =>
 {
      // Save the response body to a file
-    fs.writeFile(filePath,body);
+    fs.writeFile(file,body);
 });
 
 
