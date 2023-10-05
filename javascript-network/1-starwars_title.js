@@ -5,9 +5,9 @@ const id = process.argv[2];
 const url = 'https://swapi-api.alx-tools.com/api/films/${id}'
 
 
-req.get(url, {decoding: utf-8})
+req.get(url, {decoding: 'utf-8'})
 .on('data', function (data) {
     const response = JSON.parse(data);
-    console.log(response.title)
+    console.log(response.title);
 }
 );
