@@ -8,6 +8,8 @@ const url = 'https://swapi-api.alx-tools.com/api/films/${id}';
 req.get(url, {decoding: 'utf-8'})
 .on('data', function (data) {
     const response = JSON.parse(data);
-    console.log(response.director);
+    if (response.episode_id=== id)
+    {
+    console.log(response.title);}
 }
 );
