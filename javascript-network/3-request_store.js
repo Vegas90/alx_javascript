@@ -4,13 +4,13 @@ const req = require ('request');
 const fs = require ('fs');
 const url = process.argv[2];
 const file = process.argv[3];
-function saveWebpage(url, filePath) {
-    // Make a GET request to the URL
-    request.get(url, { encoding: 'utf-8' }, (error, response, body) => {
-      // Save the response body to a file
-      fs.writeFile(filePath, body);
-    });
-  }
+ // Make a GET request to the URL
+req.get(url, {encoding: 'utf-8'}, (error,response, body) =>
+{
+     // Save the response body to a file
+    fs.writeFile(file,body, 'utf-8');
+});
 
 
-  saveWebpage(url, filePath);
+
+
