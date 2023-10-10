@@ -7,7 +7,6 @@ function changeScoreBy(points){
    privateScore += points; 
  }
 
-}
 
 //public methods accessible from outside the module
 export const studentHogwarts = {
