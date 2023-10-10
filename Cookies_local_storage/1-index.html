@@ -14,8 +14,15 @@ function setCookies(){
     let firstname = document.getElementById("firstname").value;
     let email = document.getElementById("email").value;
 
-    // Set cookies with the values
-    document.cookie = `firstname=${firstName}`;
+//Calculate the expiration date 10 days from now
+var expdate = new date();
+expdate.setDate(expdate.getDate() + 10);
+
+//convert the expiration date to a UTC string format
+const expires = 'expires=${expdate.toUTCString()}';
+
+    //Set cookies with the values
+    document.cookie = `firstname=${firstName}; ${expires}`;
     document.cookie = `email=${email}`;
 }
 function showCookies(){
@@ -27,10 +34,5 @@ p.innerHTML = 'Cookies: ' + document.cookie;
 document.body.appendChild(p);
 }
 
-
-
   </script>
-
-
-
 </html>
