@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Available Items</h1>
+    <ul id="itemList"></ul>
+    <p id="cartMessage"></p>
+
+</body>
+
+<script>
+  // Create an array of available items
+  const availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+  // Check if local storage is enabled
+  if (!localStorage.getItem("cart")) {
+    alert("Sorry, your browser does not support Web storage. Try again with a better one");
+  }
+  // If local storage is available, create a store and display the cart
+  else {
+    createStore();
+    displayCart();
+  }   
+
+  // Function to add an item to the cart
+  function addItemToCart(item) {
+    localStorage.setItem(item, "true");
+    displayCart();
+}
+
+// Function to create the item list
+function createStore() {
+    const itemList = document.getElementById("itemList");
+
+    availableItems.forEach((item) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = item;
+        listItem.addEventListener("click", () => addItemToCart(item));
+        itemList.appendChild(listItem);
+    });
+}
+
+// Function to display the cart contents
+function displayCart() {
+    const cartMessage = document.getElementById("cartMessage");
+    const cartCount = Object.keys(localStorage).length;
+
+    if (cartCount > 0) {
+        cartMessage.textContent = `You previously had ${cartCount} item(s) in your cart.`;
+    } else {
+        cartMessage.textContent = "";
+    }
+}
+
+</script>
+
+</html>

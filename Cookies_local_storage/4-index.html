@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <title></title>
+</head>
+<body>
+        <h1>Login to the Website</h1>
+        <div class="form">
+            <input type="text" id="firstname">
+        <input type="text" id="email">
+        <button onclick="setCookies()">Log me in</button> <br>
+        <h1>Cookies</h1>
+        <button onclick="showCookies()">Show the cookies</button>
+     </div>
+    </body>
+  <script>
+function setCookies(){
+    //how you get values from the input fields
+    let firstname = document.getElementById("firstname").value;
+    let email = document.getElementById("email").value;
+
+//Calculate the expiration date 10 days from now
+var expdate = new date();
+expdate.setDate(expdate.getDate() + 10);
+
+//convert the expiration date to a UTC string format
+const expires = 'expires=${expdate.toUTCString()}';
+
+    //Set cookies with the values using js.cookie
+    Cookies.set("firstname", firstName, { expires: 10 });
+    Cookies.set("email", email);
+}
+
+    // Return the cookie value
+    return cookieValue;
+
+
+// Function to display the email and firstname cookie values
+//The `showCookies` function has been modified to retrieve the values of the "email" and "firstname" cookies using the `getCookie` function. It then creates a new paragraph element, sets its text content to the retrieved cookie values, and appends the paragraph to the document body.
+function showCookies() {
+    let email = Cookies.get("email");
+    let firstname = Cookies.get("firstname");
+
+    // Create a new paragraph element
+    let paragraph = document.createElement("p");
+
+    // Set the text content of the paragraph to the cookie values
+    paragraph.textContent = "Email: " + email + " - Firstname: " + firstname;
+
+    // Append the paragraph to the document body
+    document.body.appendChild(paragraph);
+}
+function showForm(){
+    //check if message exists
+    let welcomeMessage = document.querySelector('.welcome-message');
+
+    //if welcome exixts, remove it
+    if (welcomeMessage){
+        welcomeMessage.remove();
+    }
+
+//To display the form
+let form = document.getElementById('form');
+//show the form
+form.style.display = 'block';
+
+}
+
+function hideform(){
+//To display the form
+let form = document.getElementById('form');
+//show the form
+form.style.display = 'none';
+
+}
+
+function deleteCookiesAndShowForm(){
+    //remove the cookies
+    document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  document.cookie = "firstname=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+
+    //call the showForm function
+    showForm();
+
+}
+
+function showWelcomeMessageOrForm(){
+    if (!isLoggedIn()) {
+        // Show the form.
+        showForm();
+      } else {
+        // Replace the body of the page with a h1.
+        const body = document.body;
+        const h1 = document.createElement("h1");
+        h1.innerHTML = `Welcome ${getFirstName()} (logout)`;
+        // Make the logout link.
+        const logoutLink = document.createElement("a");
+        logoutLink.innerHTML = "(logout)";
+        logoutLink.style.fontWeight = "normal";
+        logoutLink.style.fontStyle = "italic";
+        logoutLink.style.marginLeft = "10px";
+        // Add the logout link to the h1.
+        h1.appendChild(logoutLink);
+        // Add the h1 to the body.
+        body.appendChild(h1);
+        // Add an event listener to the logout link.
+        logoutLink.addEventListener("click", () => {
+          // Delete the cookies.
+          deleteCookiesAndShowForm();
+          // Hide the welcome message.
+          h1.style.display = "none";
+          // Show the form.
+          showForm();
+        });
+      }
+} 
+
+</script>
+</html>
