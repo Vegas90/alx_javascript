@@ -35,8 +35,12 @@ function getCartFromStorage() {
     }
 // Function to add an item to the cart
 function addItemToCart(item) {
+    //content from the cartfromstorage function that stores the cart information
     const cart = getCartFromStorage();
+    //The ? in the statement is part of a conditional (ternary) operator, which is a shorthand way of writing an if-else statement. It's used to make a decision and return one of two values based on a condition.
+    //syntax: condition ? valueIfTrue : valueIfFalse
     cart[item] = cart[item] ? cart[item] + 1 : 1;
+    //is used to store the content of the cart object in the browser's Session Storage under the key "cart". 
     sessionStorage.setItem("cart", JSON.stringify(cart));
     displayCart();
 }

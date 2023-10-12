@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creating and Removing Elements</title>
+</head>
+<body>
+  <div id="container"></div>
+</body>
+
+<script>
+const container = document.getElementById("container");
+const p = document.createElement('p');
+p.innerText = "New paragraph";
+//to add to page
+container.append(p);
+
+const button = document.createElement('button');
+button.innerText = "button";
+button.addEventListener("click", toggle);
+container.append(button);
+
+
+function toggle(){
+    if (isVisible) {
+        p.style.display = "none";
+    }
+    else{
+        p.style.display = "block";
+    }
+    isVisible = !isVisible; //toggles the visibility state
+}
+</script>
+</html>
